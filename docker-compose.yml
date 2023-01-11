@@ -1,0 +1,16 @@
+version: "3"
+services:
+  lab:
+    image: jupyter_env:v01 
+    container_name: jlsb_container 
+    build:
+        context: ./.devcontainer
+        dockerfile: ./Dockerfile
+
+    ports:
+      - "8800:8888"
+
+    volumes:
+      - .:/home/jovyan/work
+
+    command: start.sh jupyter lab
