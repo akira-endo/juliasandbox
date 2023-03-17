@@ -1,14 +1,14 @@
 version: "3"
 services:
   lab:
-    image: jupyter_env:v01 
-    container_name: jlsb_container 
+    image: jupyter_fswnet:v01 
+    container_name: fswnet_container 
     build:
-        context: ./.devcontainer
-        dockerfile: ./Dockerfile
+        context: .
+        dockerfile: ./.devcontainer/Dockerfile
 
     ports:
-      - "8800:8888"
+      - "8801:8888"
 
     volumes:
       - .:/home/jovyan/work
